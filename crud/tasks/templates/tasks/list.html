@@ -1,0 +1,14 @@
+<h3>Curso de DJANGO - Avançado</h3>
+
+<form method="POST" action="/">
+    {% csrf_token %}
+    {{form.title}}
+    <input type = "submit" value = "Cadastrar">
+</form>
+
+{% for list_tasks in tasks %}
+<div>
+    <a href="{% url 'update_task' list_tasks.id %}">Atualizar dados</a>
+    <p>{{list_tasks}}</p>
+</div>
+{% endfor %}
